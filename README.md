@@ -1,8 +1,1 @@
-# Quonium
-Random python stuff for AutoGPT
 
-These are some python files from AutoGPT that I've altered. I'm extremely hesistent about adding them to the change control system as the fact ofthe matter is that I don't know how to code. At all. I am a prompt engineer. What I did was talk an AI into helping me alter these. 
-
-These may be of use. Product of two AI and a half-mad promt engineer who doesn't know python. But they seem to be working. The unsandboxed file_operations one seems to conflict with the data_ingestion script for now. Working on it The execute_code has a repaired execute_python_file command so it no longer thinks it's supposed to be in a Docker container and refuse to find files. And in json_utils.py there was an add_quote_to_property_names function that didn't have a definition, just some comments, so some json was't getting cleaned. Given the overall state of the JSON in this project, this caused problems. I believe it to be the root issue behind the bot somethimes confusing vairable names with variable values, printing "<insert code here>" or <current code>" in a file or looking for a file called "<myfile1>.py". After replacing the function I saw the bot gracefully recover from exactly that error saying "I forgot to replace the name with the value. That's why it failed. I wil lrun it again properly." which is about a million times better than the prior "flail for 20 minutes lookingfor non-exiestant stuff" behavior. 
-
-Again, I don't code. I'm just a heck of a good prompt engieer and I used ChatGPT and tools I built to fix this stuff. I make no guarantees and strongly enourage you to review the code yourself before using it.  All I can say is that it's what I'm using and it's better than what I had had before.
